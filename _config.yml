@@ -76,6 +76,8 @@ plugins: hexo-generate-feed
 ## Themes: https://hexo.io/themes/
 theme: next
 
+avatar: http://om8u46rmb.bkt.clouddn.com/avatar1.jpg?imageslim
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

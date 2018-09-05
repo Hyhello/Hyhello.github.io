@@ -5,15 +5,15 @@
 # Site
 title: Hyhello
 subtitle:
-description:
+description: 学习，生活，碎碎念~
 keywords:
-author: John Doe
-language:
-timezone:
+author: Hyhello
+language: zh
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: //blog.hyhello.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -72,6 +72,7 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
+plugins: hexo-generate-feed
 ## Themes: https://hexo.io/themes/
 theme: next
 
@@ -82,3 +83,8 @@ deploy:
   repo:
         github: git@github.com:Hyhello/Blog.git
   branch: master
+
+# Set rss to false to disable feed link.
+# Leave rss as empty to use site's feed link.
+# Set rss to specific value if you have burned your feed already.
+rss: /atom.xml

@@ -5,6 +5,7 @@ var htmlmin = require('gulp-htmlmin');
 var htmlclean = require('gulp-htmlclean');
 var gutil = require('gulp-util');
 var babel = require('gulp-babel');
+var sequence = require('run-sequence');
 
 // 压缩 public 目录 css
 gulp.task('minify-css', function() {
@@ -35,6 +36,4 @@ gulp.task('minify-js', function() {
         .pipe(gulp.dest('./public'));
 });
 // 执行 gulp 命令时执行的任务
-gulp.task('default', [
-    'minify-html','minify-css','minify-js'
-]);
+gulp.task('default', sequence('minify-html','minify-css','minify-js'));

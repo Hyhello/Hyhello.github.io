@@ -201,7 +201,7 @@ post_meta:
 post_wordcount:
   item_text: true
   wordcount: false
-  min2read: true
+  min2read: false
   separated_meta: true
 
 # Wechat Subscriber // 微信打赏
@@ -424,8 +424,8 @@ rating:
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
   enable: true
-  app_id: Cc9hxvKgB63w6aMIIBCV2Bfz-gzGzoHsz
-  app_key: mBmolCuukl1GN11A7m8VQj9f
+  app_id: OQ2jHAmFF8iLjzbUCoKnsPB0-gzGzoHsz
+  app_key: 4DzsXueUVnJdfWBJy8A1Kq2o
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/

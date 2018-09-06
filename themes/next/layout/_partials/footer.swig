@@ -26,8 +26,14 @@
     本站访客数: <span id="busuanzi_value_site_uv"></span>
   </span>
 </div>
+<div class="powered-by">
+  <i class="fa fa-eye"></i>
+  <span id="busuanzi_container_site_pv">
+      访问量：<span id="busuanzi_value_site_pv"></span>
+  </span>
+</div>
 <div class="theme-info">
-  <div class="powered-by"></div>
+  <i class="fa fa-pencil"></i>
   <span class="post-count">博客全站共{{ totalcount(site) }}字</span>
 </div>
 {% endif %}

@@ -27,11 +27,22 @@ blockquote {
   border-left: 3px solid skyblue;
 }
 
-.sidebar {
-    background: url(http://om8u46rmb.bkt.clouddn.com/sildeBarBg.jpg) no-repeat !important;
-    background-size: cover !important;
-    position: fixed !important;
-    right: 0 !important;
-    top: 0 !important;
-    bottom: 0 !important;
+.github-corner {
+  +mobile() { display: none; }
 }
+.github-corner:hover .octo-arm {
+  animation:octocat-wave 560ms ease-in-out
+  }
+@keyframes octocat-wave {
+  0%,100% {
+    transform:rotate(0)
+  }
+  20%,60% {
+    transform:rotate(-25deg)
+  }
+  40%,80% {
+    transform:rotate(10deg)
+  }
+}
+@media (max-width:500px) {
+  .github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}

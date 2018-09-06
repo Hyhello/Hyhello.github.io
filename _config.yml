@@ -103,3 +103,11 @@ passage_end_tag:
 # my_copyright
 my_copyright:
   enabled: true
+
+# 搜索
+algolia:
+  applicationID: AN7X88CGO0
+  apiKey: c987706a26732aae76798d8861630d33
+  adminApiKey: cbf80a24f8b11b0c1f75a285fbc2b9db
+  indexName: blog
+  chunkSize: 5000

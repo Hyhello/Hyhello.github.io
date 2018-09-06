@@ -104,6 +104,10 @@ passage_end_tag:
 my_copyright:
   enabled: true
 
+# Online contact
+daovoice: true
+daovoice_app_id: f12d8375
+
 # 搜索
 algolia:
   applicationID: AN7X88CGO0

@@ -27,9 +27,7 @@ gulp.task('minify-html', function() {
 // 压缩 public/js 目录 js
 gulp.task('minify-js', function() {
     return gulp.src('./public/**/*.js')
-        .pipe(babel({
-            presets: ['es2015'] // es5检查机制
-        }))
+        .pipe(babel())
         .pipe(uglify())
         .on('error', function(err) {
             gutil.log(gutil.colors.red('[Error]'), err.toString());

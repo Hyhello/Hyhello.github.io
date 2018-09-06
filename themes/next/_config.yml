@@ -219,6 +219,10 @@ post_wordcount:
 #alipay: /images/alipay.jpg
 #bitcoin: /images/bitcoin.png
 
+# 在每篇文章末尾统一添加“本文结束”标记
+passage_end_tag:
+  enabled: true
+
 # Declare license on posts
 post_copyright:
   enable: false
@@ -543,7 +547,7 @@ use_motion: true
 fancybox: true
 
 # Progress bar in the top during page loading.
-pace: false
+pace: true
 # Themes list:
 #pace-theme-big-counter
 #pace-theme-bounce

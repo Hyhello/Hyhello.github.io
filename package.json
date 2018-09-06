@@ -21,7 +21,7 @@
     "push": "hexo deploy",
     "clean": "hexo clean",
     "start": "hexo g && hexo s",
-    "build": "hexo g -d"
+    "build": "npm run clean && hexo g -d"
   },
   "devDependencies": {
     "hexo-deployer-git": "^0.3.1"

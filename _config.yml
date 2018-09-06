@@ -95,3 +95,11 @@ search:
   field: post
   format: html
   limit: 10000
+
+# 在每篇文章末尾统一添加“本文结束”标记
+passage_end_tag:
+  enabled: true
+
+# my_copyright
+my_copyright:
+  enabled: true

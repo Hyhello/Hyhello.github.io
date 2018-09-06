@@ -21,8 +21,10 @@
     "hexo-wordcount": "^6.0.1"
   },
   "scripts": {
+    "new": "bash new.sh",
     "push": "hexo deploy",
     "clean": "hexo clean",
+    "dev": "npm run start",
     "start": "npm run clean && hexo g && hexo s",
     "build": "npm run clean && hexo g -d && gulp && npm run push"
   },

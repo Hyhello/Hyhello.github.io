@@ -20,7 +20,7 @@
   "scripts": {
     "push": "hexo deploy",
     "clean": "hexo clean",
-    "start": "hexo g && hexo s",
+    "start": "npm run clean && hexo g && hexo s",
     "build": "npm run clean && hexo g -d"
   },
   "devDependencies": {

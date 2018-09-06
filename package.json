@@ -24,7 +24,7 @@
     "push": "hexo deploy",
     "clean": "hexo clean",
     "start": "npm run clean && hexo g && hexo s",
-    "build": "npm run clean && hexo g -d"
+    "build": "npm run clean && hexo g -d && gulp && npm run push"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

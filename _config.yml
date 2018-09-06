@@ -88,3 +88,10 @@ deploy:
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
 rss: /atom.xml
+
+# 搜索配置
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000

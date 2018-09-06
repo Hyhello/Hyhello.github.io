@@ -477,8 +477,9 @@ calendar:
   maxResults: 250
 
 # Algolia Search
+# 站内搜索
 algolia_search:
-  enable: false
+  enable: true
   hits:
     per_page: 10
   labels:

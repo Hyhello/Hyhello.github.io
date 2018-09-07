@@ -26,7 +26,7 @@
     "clean": "hexo clean",
     "dev": "npm run start",
     "start": "npm run clean && hexo g && hexo s",
-    "build": "npm run clean && hexo g -d && gulp && npm run push"
+    "build": "npm run clean && hexo g && gulp && npm run push"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",

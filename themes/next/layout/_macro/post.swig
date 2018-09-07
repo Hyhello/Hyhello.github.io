@@ -189,7 +189,7 @@
                {% if theme.post_meta.item_text %}
                  <span class="post-meta-item-text">{{__('post.visitors')}} &nbsp;</span>
                {% endif %}
-                 <span class="leancloud-visitors-count"></span>&nbsp;次
+                 <span class="leancloud-visitors-count"></span>次
              </span>
           {% endif %}
 

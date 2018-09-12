@@ -48,9 +48,10 @@ index_with_subtitle: false
 menu:
   home: /
   categories: /categories/
-  about: /about/
   archives: /archives/
   tags: /tags/
+  gitbook: 'http://www.hao123.com'
+  about: /about/
   #sitemap: /sitemap.xml
   #commonweal: /404/
 
@@ -67,6 +68,7 @@ menu_icons:
   categories: th
   schedule: calendar
   tags: tags
+  gitbook: book
   archives: archive
   sitemap: sitemap
   commonweal: heartbeat

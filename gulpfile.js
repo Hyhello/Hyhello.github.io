@@ -27,7 +27,7 @@ gulp.task('minify-html', function() {
 });
 // 压缩 public/js 目录 js
 gulp.task('minify-js', function() {
-    return gulp.src(['./public/**/*.js', '!./public/lib/algolia-instant-search/**/*.js'])
+    return gulp.src(['./public/**/*.js', '!./public/lib/algolia-instant-search/**/*.js', '!./public/lib/three/**/*.js'])
         .pipe(babel())
         .pipe(uglify())
         .on('error', function(err) {

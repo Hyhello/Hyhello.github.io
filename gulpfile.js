@@ -6,6 +6,9 @@ var htmlclean = require('gulp-htmlclean');
 var gutil = require('gulp-util');
 var babel = require('gulp-babel');
 var sequence = require('run-sequence');
+var revDel = require('gulp-rev-delete-original');
+var revCollector = require('gulp-rev-collector');
+var rev = require('gulp-rev');
 
 // 压缩 public 目录 css
 gulp.task('minify-css', function() {
@@ -35,5 +38,23 @@ gulp.task('minify-js', function() {
         })
         .pipe(gulp.dest('./public'));
 });
+
+// 添加hash
+gulp.task('rev', function () {
+    return gulp.src(['./public/**/*', '!./public/CNAME', '!./public/**/index.html', '!./public/**/*.json', '!./public/**/*.{otf,woff,svg,woff2,eot}'])
+                .pipe(rev())
+                .pipe(revDel())
+                .pipe(gulp.dest('./public'))
+                .pipe(rev.manifest())
+                .pipe(gulp.dest('./public'));
+});
+
+// revCollector
+gulp.task('revCollector', ['rev'], function () {
+    return gulp.src(['./public/**/*.html', './public/*.json'])
+            .pipe(revCollector({replaceReved: true}))
+            .pipe(gulp.dest('./public'));
+});
+
 // 执行 gulp 命令时执行的任务
-gulp.task('default', sequence('minify-html','minify-css','minify-js'));
+gulp.task('default', sequence('minify-html','minify-css','minify-js', 'revCollector'));

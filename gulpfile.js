@@ -9,10 +9,16 @@ var sequence = require('run-sequence');
 var revDel = require('gulp-rev-delete-original');
 var revCollector = require('gulp-rev-collector');
 var rev = require('gulp-rev');
+var autoprefixer = require('autoprefixer');
 
 // 压缩 public 目录 css
 gulp.task('minify-css', function() {
     return gulp.src('./public/**/*.css')
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions', 'Android >= 4.0'],
+            cascade: true, //是否美化属性值 默认：true 像这样：
+            remove:true //是否去掉不必要的前缀 默认：true
+        }))
         .pipe(minifycss())
         .pipe(gulp.dest('./public'));
 });

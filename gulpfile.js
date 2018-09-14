@@ -9,7 +9,7 @@ var sequence = require('run-sequence');
 var revDel = require('gulp-rev-delete-original');
 var revCollector = require('gulp-rev-collector');
 var rev = require('gulp-rev');
-var autoprefixer = require('autoprefixer');
+var autoprefixer = require('gulp-autoprefixer');
 
 // 压缩 public 目录 css
 gulp.task('minify-css', function() {

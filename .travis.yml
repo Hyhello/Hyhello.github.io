@@ -9,6 +9,7 @@ branches:
         - master
 
 cache:
+    cnpm: true
     directories:
         - node_modules
         - cnpm

@@ -18,11 +18,10 @@ install:
 script:
     - npm run build
 
-after_script:
-    - cd ./public
-    - git init
-    - git config user.name "${U_NAME}"
-    - git config user.email "${U_EMAIL}"
-    - git add .
-    - git commit -m "Update tools"
-    - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: master

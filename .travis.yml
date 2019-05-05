@@ -11,6 +11,7 @@ branches:
 cache:
     directories:
         - node_modules
+        - cnpm
 
 before_install:
     - npm install -g cnpm --registry=https://registry.npm.taobao.org

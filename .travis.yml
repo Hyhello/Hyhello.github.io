@@ -19,6 +19,7 @@ script:
     - npm run build
 
 deploy:
+  local_dir: ./public
   provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable

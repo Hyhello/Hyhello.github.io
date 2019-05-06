@@ -9,19 +9,16 @@ branches:
         - master
 
 cache:
-    cnpm: true
     directories:
         - node_modules
-        - cnpm
 
 before_install:
-    - npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 install:
-    - cnpm install
+    - npm install
 
 script:
-    - cnpm run build
+    - npm run build
 
 deploy:
   local_dir: ./public

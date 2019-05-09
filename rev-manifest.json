@@ -1,8 +1,10 @@
 {
+  "assets/example/clip.html": "assets/example/clip-88b1193ba3.html",
+  "assets/images/clip.jpg": "assets/images/clip-01f066a403.jpg",
   "assets/images/em.png": "assets/images/em-5df4917c3b.png",
   "assets/images/rem.png": "assets/images/rem-17170d2d3c.png",
-  "atom.xml": "atom-839c911ac9.xml",
-  "css/main.css": "css/main-329aec11d4.css",
+  "atom.xml": "atom-274a23eecf.xml",
+  "css/main.css": "css/main-25550eeea6.css",
   "images/avatar.gif": "images/avatar-bfe261f101.gif",
   "images/avatar.jpeg": "images/avatar-3b0a9ac158.jpeg",
   "images/favicon.ico": "images/favicon-f1c66284b3.ico",
@@ -83,5 +85,5 @@
   "lib/velocity/velocity.min.js": "lib/velocity/velocity-1c3ceb33d6.min.js",
   "lib/velocity/velocity.ui.js": "lib/velocity/velocity-dfe8b1df88.ui.js",
   "lib/velocity/velocity.ui.min.js": "lib/velocity/velocity-a5d14b34a7.ui.min.js",
-  "search.xml": "search-89accb5435.xml"
+  "search.xml": "search-37b80c0df8.xml"
 }

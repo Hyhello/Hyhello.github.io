@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Ye&#39;s Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://blog.hyhello.top/"/>
+  <updated>2019-05-09T14:37:43.645Z</updated>
+  <id>https://blog.hyhello.top/</id>
+  
+  <author>
+    <name>Hyhello</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>clip属性</title>
+    <link href="https://blog.hyhello.top/2018/09/07/clip%E5%B1%9E%E6%80%A7/"/>
+    <id>https://blog.hyhello.top/2018/09/07/clip属性/</id>
+    <published>2018-09-07T01:22:04.000Z</published>
+    <updated>2019-05-09T14:37:43.645Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="clip属性介绍"><a href="#clip属性介绍" class="headerlink" title="clip属性介绍"></a>clip属性介绍</h1><h2 id="前沿"><a href="#前沿" class="headerlink" title="前沿"></a>前沿</h2><blockquote><p>CSS中有一个属性叫做clip，为修剪，剪裁之意。配合其属性关键字rect可以实现元素的矩形裁剪效果。此属性安安稳稳地存在于CSS2.1中，且使用上基本上没有类似于max-height/display:table-cell等浏览器的兼容性问题。但是此属性实际应用较少。大概由以下三个原因导致的：</p><ol><li>首先是理解上有些门槛</li><li>使用率低</li><li>此属性功能效果有不少替代方案</li></ol></blockquote><a id="more"></a><h2 id="clip属性介绍-1"><a href="#clip属性介绍-1" class="headerlink" title="clip属性介绍"></a>clip属性介绍</h2><h3 id="根据Dreamweaver的自动提示，clip有如下可用属性关键字："><a href="#根据Dreamweaver的自动提示，clip有如下可用属性关键字：" class="headerlink" title="根据Dreamweaver的自动提示，clip有如下可用属性关键字："></a>根据Dreamweaver的自动提示，clip有如下可用属性关键字：</h3><ol><li><p>auto: 即不剪切之意</p></li><li><p>inherit：据说IE浏览器是不支持的</p></li><li><p>rect(top right bottom left)：分别指最终剪裁可见区域的上边，右边，下边与左边，而所有的数值都表示位置，且是相对于原始元素的左上角而言的。<strong>最后有必要说明下：clip:rect矩形剪裁只能作用于position:absolute的元素上。</strong></p></li></ol><h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><p><a href="/assets/example/clip.html">点击跳转至demo</a></p><h2 id="相同与不同"><a href="#相同与不同" class="headerlink" title="相同与不同"></a>相同与不同</h2><h3 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h3><ol><li>rem与em皆由font-size来决定的。</li></ol><h3 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h3><ol><li>rem是根据html跟元素的font-size为基数确定的，字体大小可能首先来自浏览器设置（<strong>16px</strong>）；em是根据使用em单位的元素的字体大小决定的（<strong>注：由于字体具有继承性，所以有时会被误认为父元素font-size来决定的，实际不然</strong>）；</li></ol><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol><li><p>rem 单位翻译为像素值是由 html 元素的字体大小决定的。 此字体大小会被浏览器中字体大小的设置影响，除非显式重写一个具体单位。</p></li><li><p>em 单位转为像素值，取决于他们使用的字体大小。 此字体大小受从父元素继承过来的字体大小，除非显式重写与一个具体单位。</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h1 id=&quot;clip属性介绍&quot;&gt;&lt;a href=&quot;#clip属性介绍&quot; class=&quot;headerlink&quot; title=&quot;clip属性介绍&quot;&gt;&lt;/a&gt;clip属性介绍&lt;/h1&gt;&lt;h2 id=&quot;前沿&quot;&gt;&lt;a href=&quot;#前沿&quot; class=&quot;headerlink&quot; title=&quot;前沿&quot;&gt;&lt;/a&gt;前沿&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;CSS中有一个属性叫做clip，为修剪，剪裁之意。配合其属性关键字rect可以实现元素的矩形裁剪效果。此属性安安稳稳地存在于CSS2.1中，且使用上基本上没有类似于max-height/display:table-cell等浏览器的兼容性问题。但是此属性实际应用较少。大概由以下三个原因导致的：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先是理解上有些门槛&lt;/li&gt;
+&lt;li&gt;使用率低&lt;/li&gt;
+&lt;li&gt;此属性功能效果有不少替代方案&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="CSS相关" scheme="https://blog.hyhello.top/categories/CSS%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="css" scheme="https://blog.hyhello.top/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何使用em与rem</title>
+    <link href="https://blog.hyhello.top/2018/09/07/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8em%E4%B8%8Erem/"/>
+    <id>https://blog.hyhello.top/2018/09/07/如何使用em与rem/</id>
+    <published>2018-09-07T01:22:04.000Z</published>
+    <updated>2019-05-09T14:37:43.645Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="如何使用em与rem"><a href="#如何使用em与rem" class="headerlink" title="如何使用em与rem"></a>如何使用em与rem</h1><h2 id="前沿"><a href="#前沿" class="headerlink" title="前沿"></a>前沿</h2><blockquote><p>你可能已经很熟练使用这两个灵活的单位，但你可能不完全了解何时使用 rem，何时使用em。em和rem都是很灵活，可扩展的单位，由浏览器转换为像数值(px)，具体取决于字体大小的设置。使用em和rem单位可以让我们的设计更加灵活，能够控制元素整体放大缩小，在我们在开发期间，能更加快速灵活的调整，允许浏览器用户调整浏览器字体大小来达到最佳体验。这么好用的东西，怎么会没有兼容性问题呢，请往下看~</p></blockquote><a id="more"></a><h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><p><img src="/assets/images/em.png" alt="em" title="em"></p><p><img src="/assets/images/rem.png" alt="rem" title="rem"></p><h2 id="相同与不同"><a href="#相同与不同" class="headerlink" title="相同与不同"></a>相同与不同</h2><h3 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h3><ol><li>rem与em皆由font-size来决定的。</li></ol><h3 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h3><ol><li>rem是根据html跟元素的font-size为基数确定的，字体大小可能首先来自浏览器设置（<strong>16px</strong>）；em是根据使用em单位的元素的字体大小决定的（<strong>注：由于字体具有继承性，所以有时会被误认为父元素font-size来决定的，实际不然</strong>）；</li></ol><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol><li><p>rem 单位翻译为像素值是由 html 元素的字体大小决定的。 此字体大小会被浏览器中字体大小的设置影响，除非显式重写一个具体单位。</p></li><li><p>em 单位转为像素值，取决于他们使用的字体大小。 此字体大小受从父元素继承过来的字体大小，除非显式重写与一个具体单位。</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h1 id=&quot;如何使用em与rem&quot;&gt;&lt;a href=&quot;#如何使用em与rem&quot; class=&quot;headerlink&quot; title=&quot;如何使用em与rem&quot;&gt;&lt;/a&gt;如何使用em与rem&lt;/h1&gt;&lt;h2 id=&quot;前沿&quot;&gt;&lt;a href=&quot;#前沿&quot; class=&quot;headerlink&quot; title=&quot;前沿&quot;&gt;&lt;/a&gt;前沿&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;你可能已经很熟练使用这两个灵活的单位，但你可能不完全了解何时使用 rem，何时使用em。em和rem都是很灵活，可扩展的单位，由浏览器转换为像数值(px)，具体取决于字体大小的设置。使用em和rem单位可以让我们的设计更加灵活，能够控制元素整体放大缩小，在我们在开发期间，能更加快速灵活的调整，允许浏览器用户调整浏览器字体大小来达到最佳体验。这么好用的东西，怎么会没有兼容性问题呢，请往下看~&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="CSS相关" scheme="https://blog.hyhello.top/categories/CSS%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="css" scheme="https://blog.hyhello.top/tags/css/"/>
+    
+  </entry>
+  
+</feed>

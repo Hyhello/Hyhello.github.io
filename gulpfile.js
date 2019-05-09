@@ -72,5 +72,5 @@ gulp.task('revCollector', ['rev'], function () {
 
 // 执行 gulp 命令时执行的任务
 gulp.task('default', function (cb) {
-	sequence('minify-html','minify-css','minify-js', 'minify-img', 'revCollector', cb);
+	sequence(['minify-html','minify-css','minify-js', 'minify-img'], 'revCollector', cb);
 });

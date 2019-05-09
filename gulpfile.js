@@ -49,7 +49,7 @@ gulp.task('minify-js', function() {
 // copy assets
 gulp.task('copy', function () {
     return gulp.src('./assets/**/*.*')
-        .pipe(gulp.dest('./public'));
+        .pipe(gulp.dest('./public/assets'));
 });
 
 // 压缩assets 图片信息

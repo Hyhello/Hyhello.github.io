@@ -13,19 +13,24 @@ keywords: CSS相关
 ## 前沿
 
 > CSS中有一个属性叫做clip，为修剪，剪裁之意。配合其属性关键字rect可以实现元素的矩形裁剪效果。此属性安安稳稳地存在于CSS2.1中，且使用上基本上没有类似于max-height/display:table-cell等浏览器的兼容性问题。但是此属性实际应用较少。大概由以下三个原因导致的：
+>1. 首先是理解上有些门槛
+>2. 使用率低
+>3. 此属性功能效果有不少替代方案
 
 <!--more-->
-1. 首先是理解上有些门槛
+## clip属性介绍
 
-2. 使用率低
+### 根据Dreamweaver的自动提示，clip有如下可用属性关键字：
 
-3. 此属性功能效果有不少替代方案
+1. auto: 即不剪切之意
+
+2. inherit：据说IE浏览器是不支持的
+
+3. rect(top right bottom left)：分别指最终剪裁可见区域的上边，右边，下边与左边，而所有的数值都表示位置，且是相对于原始元素的左上角而言的。**最后有必要说明下：clip:rect矩形剪裁只能作用于position:absolute的元素上。**
 
 ## 兼容性
 
-![em](/assets/images/em.png "em")
-
-![rem](/assets/images/rem.png "rem")
+[点击跳转至demo](/assets/example/clip.html)
 
 ## 相同与不同
 

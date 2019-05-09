@@ -16,4 +16,4 @@ keywords: CSS相关
 
 ## 兼容性
 
-![](/assets/images/rem.png)
+![rem](/assets/images/rem.png)

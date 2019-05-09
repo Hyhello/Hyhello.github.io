@@ -5,7 +5,6 @@ var htmlmin = require('gulp-htmlmin');
 var htmlclean = require('gulp-htmlclean');
 var gutil = require('gulp-util');
 var babel = require('gulp-babel');
-var copy = require('gulp-copy');
 var imageMin = require('gulp-imagemin');
 var sequence = require('run-sequence');
 var revDel = require('gulp-rev-delete-original');
@@ -46,11 +45,18 @@ gulp.task('minify-js', function() {
         })
         .pipe(gulp.dest('./public'));
 });
+
+// copy assets
+gulp.task('copy', function () {
+    return gulp.src('./assets/**/*.*')
+        .pipe(gulp.dest('./public'));
+});
+
 // 压缩assets 图片信息
 gulp.task('minify-img', function(){
-    return gulp.src('./assets/images/*.*')
+    return gulp.src('./public/**/*.{png,jpg,gif,ico}')
         .pipe(imageMin({progressive: true}))
-        .pipe(gulp.dest('./public/assets/images'));
+        .pipe(gulp.dest('./public'));
 });
 
 // 添加hash
@@ -72,5 +78,5 @@ gulp.task('revCollector', ['rev'], function () {
 
 // 执行 gulp 命令时执行的任务
 gulp.task('default', function (cb) {
-	sequence(['minify-html','minify-css','minify-js', 'minify-img'], 'revCollector', cb);
+	sequence('copy', ['minify-html','minify-css','minify-js', 'minify-img'], 'revCollector', cb);
 });

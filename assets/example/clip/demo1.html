@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clip属性</title>
+    <style>
+        .clip-main {
+            position: relative;
+        }
+        .clip-t,
+        .clip-r,
+        .clip-b,
+        .clip-l {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="clip-main">
+        <div class="clip-t"></div>
+        <div class="clip-r"></div>
+        <div class="clip-b"></div>
+        <div class="clip-l"></div>
+        <img class="clip-main" src="/assets/images/clip.jpg" alt="clip" />
+    </div>
+    <script>
+
+        // 获取元素
+        var oM = getByClass(null, 'clip-main')[0];
+        var oL = getByClass(oM, 'clip-l')[0];
+        var oR = getByClass(oM, 'clip-r')[0];
+        var oT = getByClass(oM, 'clip-t')[0];
+        var oB = getByClass(oM, 'clip-b')[0];
+
+
+        // 通过class获取元素
+        function getByClass (iParent, iClass) {
+            iParent = iParent || document.body;
+            var list = [];
+            var reg = new RegExp('\\b' + iClass + '\\b', 'i');
+            var aLi = iParent.getElementsByTagName('*');
+            [].slice.call(aLi).forEach(function (item) {
+                if (reg.test(item.className)) {
+                    list.push(item);
+                }
+            });
+            return list;
+        };
+
+
+    </script>
+</body>
+</html>

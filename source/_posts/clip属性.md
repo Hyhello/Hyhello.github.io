@@ -27,10 +27,9 @@ keywords: CSS相关
 2. inherit：据说IE浏览器是不支持的
 
 3. rect(top right bottom left)：分别指最终剪裁可见区域的上边，右边，下边与左边，而所有的数值都表示位置，且是相对于原始元素的左上角而言的。**最后有必要说明下：clip:rect矩形剪裁只能作用于position:absolute的元素上。**
+[**点击跳转至demo**](/assets/example/clip/demo1.html)
 
 ## 兼容性
-
-[点击跳转至demo](/assets/example/clip.html)
 
 ## 相同与不同
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象转数组</title>
+</head>
+<body>
+    <script>
+
+        // 有length
+        let arrayLike = {
+            0: 'tom',
+            1: '65',
+            2: '男',
+            3: ['jane','john','Mary'],
+            'length': 4
+        }
+        console.log(Array.from(arrayLike)); //
+
+        // 无length
+        let arrayLike1 = {
+            0: 'tom',
+            1: '65',
+            2: '男',
+            3: ['jane','john','Mary']
+        }
+        console.log(Array.from(arrayLike1)); //
+
+        // map类型
+        let arrayLike2 = {
+            "name": 'tom',
+            "age": '65',
+            "sex": '男',
+            "job": ['jane','john','Mary'],
+            'length': 4
+        }
+        console.log(Array.from(arrayLike2)); //
+    </script>
+</body>
+</html>

@@ -8,8 +8,8 @@
             3: ['jane','john','Mary'],
             'length': 4
         }
-        console.log(Array.from(arrayLike)); //
-
+        document.write(JSON.stringify(Array.from(arrayLike))); //
+        document.write("</br>");
         // 无length
         let arrayLike1 = {
             0: 'tom',
@@ -17,7 +17,8 @@
             2: '男',
             3: ['jane','john','Mary']
         }
-        console.log(Array.from(arrayLike1)); //
+        document.write(JSON.stringify(Array.from(arrayLike1))); //
+        document.write("</br>");
 
         // map类型
         let arrayLike2 = {
@@ -27,5 +28,5 @@
             "job": ['jane','john','Mary'],
             'length': 4
         }
-        console.log(Array.from(arrayLike2)); //
+        document.write(JSON.stringify(Array.from(arrayLike2))); //
     </script></body></html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用clip实现剪切图片上传功能</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 2000px;
+        }
+
+        .drop-panel {
+            position: absolute;
+            left: 200px;
+            top: 200px;
+            width: 150px;
+            height: 120px;
+            border: 1px solid black;
+        }
+
+        .drag_inner {
+            width: 100%;
+            height: 100%;
+            cursor: move;
+            background-color: white;
+            opacity: 0.3;
+        }
+        .drop-inner_item {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border: 1px solid #000;
+            background: white;
+            overflow: hidden;
+        }
+        .drop-inner_item.top-left,
+        .drop-inner_item.bottom-right {
+            cursor: nw-resize;
+        }
+        .drop-inner_item.top-right,
+        .drop-inner_item.bottom-left {
+            cursor: ne-resize;
+        }
+        .drop-inner_item.top-center,
+        .drop-inner_item.bottom-center {
+            cursor: n-resize;
+        }
+        .drop-inner_item.right-center,
+        .drop-inner_item.left-center {
+            cursor: e-resize;
+        }
+
+        .drop-inner_item.top-left,
+        .drop-inner_item.top-center,
+        .drop-inner_item.top-right {
+            top: -3px;
+            margin-left: -3px;
+        }
+        .drop-inner_item.bottom-left,
+        .drop-inner_item.bottom-center,
+        .drop-inner_item.bottom-right {
+            bottom: -3px;
+            margin-left: -3px;
+        }
+        .drop-inner_item.top-left,
+        .drop-inner_item.bottom-left {
+            left: 0;
+        }
+        .drop-inner_item.top-center,
+        .drop-inner_item.bottom-center {
+            left: 50%;
+        }
+        .drop-inner_item.top-right,
+        .drop-inner_item.bottom-right {
+            left: 100%;
+        }
+        .drop-inner_item.left-center {
+            top: 50%;
+            left: 0;
+            margin: -3px 0 0 -3px;
+        }
+        .drop-inner_item.right-center {
+            top: 50%;
+            right: 0;
+            margin: -3px -3px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <clip id="clip"></clip>
+    123123132123123123
+    <div class="drop-panel" id="drag">
+        <div class="drag_inner"></div>
+        <span placment="top-left" class="drop-inner_item top-left"></span>
+        <span placment="top-center" class="drop-inner_item top-center"></span>
+        <span placment="top-right" class="drop-inner_item top-right"></span>
+        <span placment="left-center" class="drop-inner_item left-center"></span>
+        <span placment="right-center" class="drop-inner_item right-center"></span>
+        <span placment="bottom-left" class="drop-inner_item bottom-left"></span>
+        <span placment="bottom-center" class="drop-inner_item bottom-center"></span>
+        <span placment="bottom-right" class="drop-inner_item bottom-right"></span>
+    </div>
+    <script src="../../../assets/example/clip/clip.js"></script>
+    <script>
+        // 获取
+        function getByClass (iParent, iClass) {
+            iParent = iParent || document;
+            try {
+                return document.querySelectorAll('.' + iClass);
+            } catch (e) {
+                var temp = [];
+                var aTagList = iParent.getElementsByTagName('*');
+                var reg = new RegExp('\\b' + iClass + '\\b', 'i');
+                for (var i = 0, ii = aTagList.length; i < ii; i++) {
+                    if (reg.test(aTagList[i].className)) {
+                        temp.push(aTagList[i]);
+                    }
+                }
+                return temp;
+            }
+        }
+
+        function getScrollRect () {
+            return {
+                y: (document.documentElement || document.body).scrollTop,
+                x: (document.documentElement || document.body).scrollLeft
+            };
+        }
+
+        var oDrag = document.getElementById('drag');
+
+
+        function _rect (el) {
+            var rect = el.getBoundingClientRect();
+            return {
+                x: rect.x || rect.left,
+                y: rect.y || rect.top,
+                width: rect.width || (rect.right - rect.left),
+                height: rect.height || (rect.bottom - rect.top),
+                left: rect.left,
+                top: rect.top,
+                right: rect.right,
+                bottom: rect.bottom
+            };
+        }
+
+        // drag 拖拽
+        var drag = function (el, placment) {
+            // 鼠标按下
+            el.onmousedown = function (ev) {
+                ev = ev || window.event;
+                var rect = _rect(el);
+                var res = {};
+                res.x = ev.clientX - rect.x;
+                res.y = ev.clientY - rect.y;
+                var oDragRect = _rect(oDrag);
+                // 兼容ie
+                if (el.setCapture) {
+                    el.setCapture();
+                }
+                document.onmousemove = function (ev) {
+                    ev = ev || window.event;
+                    var _getScrollRect = getScrollRect();
+                    var x = ev.clientX - res.x;
+                    var y = ev.clientY - res.y;
+                    switch (placment) {
+                        // 上
+                        case 'nt':
+                            if (y > oDragRect.bottom) return;
+                            oDrag.style.height = oDragRect.bottom - y + 'px';
+                            oDrag.style.top = _getScrollRect.y + y + 'px';
+                            break;
+                        // 下
+                        case 'nb':
+                            oDrag.style.height = y - oDragRect.top + 'px';
+                            break;
+                        // 左
+                        case 'nl':
+                            if (x > oDragRect.right) return;
+                            oDrag.style.width = oDragRect.right - x + 'px';
+                            oDrag.style.left = _getScrollRect.x + x + 'px';
+                            break;
+                        // 右
+                        case 'nr':
+                            oDrag.style.width = x - oDragRect.left + 'px';
+                            break;
+                        // 左上
+                        case 'nwt':
+                            if (x > oDragRect.right) return;
+                            if (y > oDragRect.bottom) return;
+                            oDrag.style.height = oDragRect.bottom - y + 'px';
+                            oDrag.style.top = _getScrollRect.y + y + 'px';
+                            oDrag.style.width = oDragRect.right - x + 'px';
+                            oDrag.style.left = _getScrollRect.x + x + 'px';
+                            break;
+                        // 右下
+                        case 'nwb':
+                            oDrag.style.width = x - oDragRect.left + 'px';
+                            oDrag.style.height = y - oDragRect.top + 'px';
+                            break;
+                        // 右上
+                        case 'ner':
+                            if (y > oDragRect.bottom) return;
+                            oDrag.style.height = oDragRect.bottom - y + 'px';
+                            oDrag.style.width = (ev.clientX - res.x) - oDragRect.left + 'px';
+                            oDrag.style.top = _getScrollRect.y + y + 'px';
+                            break;
+                        // 左下
+                        case 'nel':
+                            oDrag.style.width = oDragRect.right - x + 'px';
+                            oDrag.style.height = y - oDragRect.top + 'px';
+                            oDrag.style.left = _getScrollRect.x + x + 'px';
+                            break;
+                        default:
+                            oDrag.style.top = _getScrollRect.y + y + 'px';
+                            oDrag.style.left = _getScrollRect.x + x + 'px';
+                            break;
+                    }
+                };
+                document.onmouseup = function () {
+                    // 兼容ie
+                    if (el.releaseCapture) {
+                        el.releaseCapture();
+                    }
+                    res = rect = null;
+                    this.onmousemove = null;
+                    this.onmouseup = null;
+                };
+                return false;
+            };
+        };
+
+        drag(getByClass(oDrag, 'top-center')[0], 'nt');
+        drag(getByClass(oDrag, 'bottom-center')[0], 'nb');
+        drag(getByClass(oDrag, 'left-center')[0], 'nl');
+        drag(getByClass(oDrag, 'right-center')[0], 'nr');
+        drag(getByClass(oDrag, 'top-left')[0], 'nwt');
+        drag(getByClass(oDrag, 'bottom-right')[0], 'nwb');
+        drag(getByClass(oDrag, 'top-right')[0], 'ner');
+        drag(getByClass(oDrag, 'bottom-left')[0], 'nel');
+        drag(getByClass(oDrag, 'drag_inner')[0]);
+    </script>
+</body>
+</html>

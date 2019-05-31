@@ -48,9 +48,13 @@
             height: 0;
             bottom: 0;
         }
+        .inp-panel {
+            font-size: 20px;
+        }
         span {
             display: inline-block;
-            padding: 6px;
+            padding: 5px;
+            font-size: 14px;
             vertical-align: middle;
             line-height: 1.1;
             border-top-left-radius: 0;
@@ -65,8 +69,9 @@
             display: inlin-block;
             vertical-align: middle;
             box-sizing: border-box;
-            width: 70px;
-            padding: 6px 12px;
+            width: 45px;
+            font-size: 14px;
+            padding: 5px 8px;
             border-radius: 4px;
             outline: none;
             border: 1px solid #cccccc;
@@ -85,10 +90,12 @@
         <img class="clip-img" width="100%" src="../../../assets/images/clip.jpg" alt="clip" />
     </div>
     <div class="inp-panel">
-        <label>top: <input id="top" type="text" value="50"><span>px</span></label>
-        <label>right: <input id="right" type="text" value="300"><span>px</span></label>
-        <label>bottom: <input id="bottom" type="text" value="300"><span>px</span></label>
-        <label>left: <input id="left" type="text" value="50"><span>px</span></label>
+        clip: rect(
+            <input id="top" type="text" value="50"><span>px</span></label>&nbsp;
+            <input id="right" type="text" value="300"><span>px</span></label>&nbsp;
+            <input id="bottom" type="text" value="300"><span>px</span></label>&nbsp;
+            <input id="left" type="text" value="50"><span>px</span></label>
+        );
         <button id="btn">剪切</button>
         <button id="reset">reset</button>
     </div>
@@ -117,12 +124,14 @@
                 img.style.position = 'absolute';
                 img.style.top = 0;
                 img.style.left = 0;
+                oLeft.disabled = oBottom.disabled = oRight.disabled = oTop.disabled = true;
             };
 
             oReset.onclick = function () {
                 img.style.position = 'static';
                 img.style.top = 0;
                 img.style.left = 0;
+                oLeft.disabled = oBottom.disabled = oRight.disabled = oTop.disabled = false;
             };
 
             ['top', 'right', 'bottom', 'left'].forEach(function (item) {
